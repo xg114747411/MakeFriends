@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.atguigu.maven</groupId>
+    <artifactId>MakeFriends</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <!--packaging : 打包方式
+            默认： jar
+            war  ：web mvn项目
+            pom  : mvn父工程
+    -->
+    <packaging>jar</packaging>
+    <!--   统一版本号管理 -->
+    <properties>
+        <spring.version>5.2.7.RELEASE</spring.version>
+        <mybatis.version>3.5.1</mybatis.version>
+        <mysql.version>5.1.12</mysql.version>
+    </properties>
+
+    <!-- 添加依赖:
+            如果不知道依赖的jar包的坐标，可以根据依赖的jar包名称 去 mvn repository网站中搜索
+      -->
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+
+
+
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+            <!-- <scope>test</scope>-->
+        </dependency>
+    <dependency>
+        <groupId>com.atguigu.maven</groupId>
+        <artifactId>Hello</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <!-- 排除依赖 -->
+        <exclusions>
+            <exclusion>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+            </exclusion>
+        </exclusions>
+    </dependency>
+
+
+
+        <!--  在MakeFriends项目中依赖了commons-fileupload ,在commons-fileupload中依赖了commons-io -->
+       <!-- <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.4</version>
+        </dependency>-->
+    </dependencies>
+
+</project>
